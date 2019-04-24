@@ -62,23 +62,48 @@ const countUpAndDown = function (top){
 countUpAndDown(3);
 
 // Problem 7
-// NO IDEA 
-// charAt ???, search for a character in an array of words js
 const wordsWithA = function (arr1){
     let arr2 = [];
     for (let i=0; i<arr1.length; i++){
-        
-    }
+        for (let m=0; m<arr1[i].length; m++){
+            if (arr1[i][m] === 'a') {
+                arr2.push(arr1[i]); }
+        }
+     }
+    return arr2;
 }
+wordsWithA(['cat', 'rabbit', 'dog', 'frog']);
 
 // problem 8
-// same as 7
-const wordsWithLetter = function(){}
+const wordsWithLetter = function(letter, arr1){
+    let arr2 = [];
+    for (let i = 0; i < arr1.length; i++) {
+        for (let m = 0; m < arr1[i].length; m++) {
+            if (arr1[i][m] === letter) {
+                arr2.push(arr1[i]);
+            }
+        }
+    }
+    return arr2;
+}
+wordsWithLetter("g", ['cat', 'rabbit', 'dog', 'frog']);
 
 // Problem 9
-const longestWord = function (){
-
+const longestWord = function (txt){
+    let arr = txt.split(" "); // splits by spaces
+    let long = 0; // longest char index
+    let longword; //longest word
+    for (let i = 0; i < arr.length; i++) {
+        for (let m = 0; m < arr[i].length; m++) {
+            if (arr[i].length > long) {
+                long = arr[i].length;
+                longword = arr[i];
+            }
+        }
+    }
+    return longword;
 }
+longestWord("The cat in the house");
 
 // Problem 10 
 const largestEvenNumber = function(numbers){
